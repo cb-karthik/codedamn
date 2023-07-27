@@ -3,20 +3,22 @@
 
 import React from "react";
 import { BiEdit } from "react-icons/bi";
-
 import { CiLocationOn } from "react-icons/ci";
 import ProfileSkills from "./profilecard/ProfileSkills";
 import ProfileSocialIcons from "./profilecard/ProfileSocialIcons";
-
 import { useGlobalData } from "@/context/DataContext";
 import ProfileOptions from "./ProfileOptions";
 import { useSession } from "next-auth/react";
+
 function Profile() {
   // const [data] = useGobalData();
   const { data, status } = useSession({ required: false });
   const imageSrc = data?.user?.image ?? "";
   const { data: globalData } = useGlobalData();
   const globalUserImage = globalData?.profile?.imgSrc;
+  const name = globalData?.profile?.name || data?.user?.name || "John Doe";
+  const profession = globalData?.profile?.profession || "Full Stack";
+  const location = globalData?.profile?.location || "Mumbai, India";
 
   return (
     <div className="overflow-hidden h-fit w-full max-w-[55rem] relative p-5 ">
@@ -44,7 +46,7 @@ function Profile() {
           <div className=" w-full h-full flex flex-col  text-black p-5 ">
             <div>
               <p className="flex items-center font-bold text-2xl mb-4 ">
-                Karthik C.B.
+                {name}
                 <span className="text-sm  bg-lime-400 border rounded-md ml-5 px-2">
                   Pro
                 </span>
@@ -52,11 +54,9 @@ function Profile() {
                   Looking for job
                 </span>
               </p>
-              <p className="text-gray-500 text-sm mb-1">
-                Full stack dev at codedamn | Harvard&apos; &quot;23&quot;
-              </p>
+              <p className="text-gray-500 text-sm mb-1">{profession}</p>
               <p className="flex  items-center text-gray-400 text-sm mb-1 ">
-                <CiLocationOn /> Mumbai, India
+                <CiLocationOn /> {location}
               </p>
               <ProfileSkills />
               <div className="mt-5 h-px bg-gray-300"></div>

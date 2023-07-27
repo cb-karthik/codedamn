@@ -37,12 +37,12 @@ function Intrests (){
       <div className=" text-xl font-bold mb-2">Intrests</div>
     <div className="flex flex-wrap  gap-6 pt-2 text-black mb-2 ">
       
-      {intrest.map(({ id, name }) => (
+      {intrestsData.map(( intrestsData ) => (
         <div
-          key={id}
+          key={intrestsData}
           className=" px-2 py-[2px] w-fit border rounded-md bg-gray-100 text-l font-bold "
         >
-          {name}
+          {intrestsData}
         </div>
       ))}
     </div>

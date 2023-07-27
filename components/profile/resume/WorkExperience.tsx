@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import { useGlobalData } from "@/context/DataContext";
+import dayjs from "dayjs";
 
 const workExperienceItems = [
   {
@@ -32,11 +33,11 @@ const workExperienceItems = [
   },
 ];
 
-
 function WorkExperience() {
   const { data: globalData } = useGlobalData();
 
-  const workExperienceData = globalData?.resume?.experiences || workExperienceItems;
+  const workExperienceData =
+    globalData?.resume?.experiences || workExperienceItems;
 
   return (
     <div className="mt-4 w-full">
@@ -44,7 +45,7 @@ function WorkExperience() {
         Work Experience
       </div>
 
-      {workExperienceData.map((experiences,index) => (
+      {workExperienceData.map((experiences, index) => (
         <WorkExperienceCard key={index} {...experiences} />
       ))}
     </div>
@@ -93,7 +94,9 @@ export const WorkExperienceCard = ({
           <span className=" flex w-1 bg-gray-600 rounded-full h-1"></span>{" "}
           <span>{companyName}</span>{" "}
           <span className="font-bold absolute right-2 top-13 ">
-            {workingFrom} <span className="font-bold text-black "> to </span> {till}
+            {dayjs(workingFrom).format("MMMM YYYY")}
+            <span className="font-bold text-black "> to </span>{" "}
+            {dayjs(till).format("MMMM YYYY")}
           </span>
         </p>
 

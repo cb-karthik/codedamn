@@ -1,8 +1,12 @@
+/* eslint-disable @next/next/no-img-element */
 import { constantPlaygrounds, constantSkills } from "@/constants/constants";
 import { useGlobalData } from "@/context/DataContext";
-
 import Image from "next/image";
-import { RxAvatar } from "react-icons/rx";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import { useSession } from "next-auth/react";
+import Link from "next/link";
+dayjs.extend(relativeTime);
 
 const playgroundItems = [
   {
@@ -41,9 +45,12 @@ function PlayGrounds() {
       <div className="mt-4 w-full ">
         <div className="text-xl font-bold  flex justify-between ">
           Playgrounds
-          <a className=" text-sm text-indigo-500 " href="/">
+          <Link
+            className=" text-sm text-indigo-500 "
+            href="/edit?tab=portfolio"
+          >
             Create new Playground
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -73,6 +80,10 @@ export type CardProps = {
 };
 
 export const PlayGroundCard = ({ title, skills, time, author }: CardProps) => {
+  const { data: globalData } = useGlobalData();
+  const globalUserImage = globalData?.profile?.imgSrc;
+  const { data, status } = useSession({ required: false });
+  const imageSrc = data?.user?.image ?? "";
   return (
     <div className=" w-[calc(50%-0.7rem)]">
       <div className=" relative flex p-3 bg-gray-50 border rounded-lg ">
@@ -89,13 +100,20 @@ export const PlayGroundCard = ({ title, skills, time, author }: CardProps) => {
           <p className=" flex  text-gray-400 gap-4 items-center text-sm my-2">
             <span> {skills}</span>
             <span className=" flex w-1 bg-gray-600 rounded-full h-1"></span>
-            <span className=" flex text-gray-400">{time} min ago</span>
+            <span className=" flex text-gray-400">{dayjs(time).fromNow()}</span>
           </p>
 
           <div className=" text-xs text-gray-400 ">
             <p className="flex items-center gap-1">
-              <RxAvatar size={35} />
-              <span className="font-bold"> {author.name}</span>,
+              <img
+                alt="search icon"
+                src={globalUserImage || imageSrc || "https://shorturl.at/swEGK"}
+                width={30}
+                height={30}
+                className="object-contain mt-1 rounded-full"
+              />
+              <span className="font-bold"> {globalData?.profile?.name || data?.user?.name || "John Doe"}</span>
+              <span>and 2 others</span>
             </p>
           </div>
         </div>

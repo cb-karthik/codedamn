@@ -1,44 +1,16 @@
+import { useGlobalData } from "@/context/DataContext";
+const skills = ["HTML", "CSS", "Javascript", "React js"];
+
 function ProfileSkills() {
-  const skills = [
-    {
-      id: 1,
-      name: "HTML",
-    },
-    {
-      id: 2,
-      name: "CSS",
-    },
-    {
-      id: 3,
-      name: "Javascript",
-    },
-    {
-      id: 4,
-      name: "React js",
-    },
-    {
-      id: 5,
-      name: "Next js",
-    },
-    {
-      id: 6,
-      name: "Tailwind",
-    },
-    {
-      id: 7,
-      name: "MongoDB",
-    },
-    {
-      id: 8,
-      name: "Node",
-    },
-  ];
+  const { data: globalData } = useGlobalData();
+
+  const profileSkills = globalData?.resume?.techskills || skills;
 
   return (
     <div className="flex flex-wrap  gap-4 pt-2 text-black ">
-      {skills.map(({ id, name }) => (
+      {profileSkills.map((name) => (
         <div
-          key={id}
+          key={name}
           className=" px-2 py-[2px] w-fit border rounded-md bg-gray-300 text-xs "
         >
           {name}

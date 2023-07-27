@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import Link from "next/link";
 function Certificates() {
 
     const certificateItems = [
@@ -42,9 +42,9 @@ function Certificates() {
       <div className="mt-4 w-full ">
         <div className="text-xl font-bold  flex justify-between ">
           Certificates
-          <a className=" text-sm text-indigo-500 " href="/">
-            Create new Certificate
-          </a>
+          <Link className=" text-sm text-indigo-500 " href="/edit?tab=portfolio">
+          Create new project
+        </Link>
         </div>
       </div>
 

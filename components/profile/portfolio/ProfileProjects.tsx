@@ -3,7 +3,9 @@ import { useGlobalData } from "@/context/DataContext";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
+import dayjs from 'dayjs';
+import relativeTime from "dayjs/plugin/relativeTime";
+dayjs.extend(relativeTime);
 const projectItems = [
   {
     id: 1,
@@ -76,7 +78,7 @@ export const ProjectsCard = ({ image, name, skill1, skill2 }: CardProps) => {
   return (
     <div className="p-3 bg-gray-50 border rounded-lg w-[calc(50%-0.7rem)]">
       <img
-        alt="search icon"
+        alt="project image"
         src={image}
         width={80}
         height={80}
@@ -106,6 +108,9 @@ export const ProjectsCard = ({ image, name, skill1, skill2 }: CardProps) => {
         />
         <p className="text-gray-400 text-sm  font-bold">{skill2}</p>
       </div>
+      {/* <span className=" flex text-gray-400">
+              {dayjs(time).fromNow()}
+            </span> */}
     </div>
   );
 };

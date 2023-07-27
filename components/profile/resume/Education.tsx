@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-// import Image from "next/image";
-import { type } from "os";
+
+import dayjs from "dayjs";
 import React from "react";
 import { useGlobalData } from "@/context/DataContext";
 
@@ -82,8 +82,8 @@ export const EducationCard = ({
       <div className="ml-10 ">
         <h1 className=" flex font-bold text-lg -mt-2"> {institutionName}</h1>
 
-        <span className=" absolute right-2 top-13 ">
-          {studiedFrom} to {till}
+        <span className=" absolute right-2 top-13 font-bold text-sm  ">
+          {dayjs(studiedFrom).format("MMMM YYYY")} to   {dayjs(till).format("MMMM YYYY")}
         </span>
 
         <div className="text-l text-black flex  items-center gap-2 mt-2">
