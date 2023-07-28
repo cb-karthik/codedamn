@@ -4,7 +4,7 @@
 
 # Live demo
 
-- Here is the live demo of the project hosted on Vercel. [ https://codedamn-fawn.vercel.app/ ]
+- Here is the live demo of the project hosted on Vercel. https://codedamn-fawn.vercel.app/
 
 # About Project
 
@@ -54,9 +54,7 @@
 ## Folder Structure
 
 
-- All the code is stored inside the `Component` folder.
+- All the code is stored inside the `Components` folder.
 - `edits` folder contains the files(codes) responsible for inputting/Updating/deleting the user data
 - `profile` folder contains the files (codes) responsible for the designs; we called them Cards.
 - Static files are stored in `public/assets`
-- All the navigable pages are in `App/[...nextauth]/routes.ts`
-- Individual components are stored in `App`
