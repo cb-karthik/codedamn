@@ -1,34 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Run Locally
 
-## Getting Started
+- Move into the root directory and run `npm run dev`
 
-First, run the development server:
+# Live demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Here is the live demo of the project hosted on Vercel. [https://got-app-five.vercel.app/](https://got-app-five.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# About Project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- This is Assignment task given by Codedamn organisation.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# Preview
 
-## Learn More
+![Screenshot (481)](https://user-images.githubusercontent.com/47584722/145552134-f06583cc-f1af-4d63-839a-a70780aa3b86.png)
+![Screenshot (482)](https://user-images.githubusercontent.com/47584722/145552179-f07f8d8e-62f0-49fa-a92f-483ea6077458.png)
+![Screenshot (483)](https://user-images.githubusercontent.com/47584722/145552211-3a6f8775-2fad-4d07-8ef3-44fb49f3bd77.png)
+![Screenshot (484)](https://user-images.githubusercontent.com/47584722/145552228-2d99a9c3-f7f2-4caa-ba76-68fd191f7a5b.png)
+![Screenshot (485)](https://user-images.githubusercontent.com/47584722/145552242-90c753fc-3f0a-4fd0-a1a7-c5a1d3fdbb4e.png)
+![Screenshot (486)](https://user-images.githubusercontent.com/47584722/145552263-686089cb-77fd-4f12-a028-439c6fc497ee.png)
+![Screenshot (487)](https://user-images.githubusercontent.com/47584722/145552275-cd25c738-e258-4276-8236-a4c347b54af2.png)
+![Screenshot (488)](https://user-images.githubusercontent.com/47584722/145552287-a1839399-84a5-4cad-bc1d-dbfe51079f21.png)
+![Screenshot (489)](https://user-images.githubusercontent.com/47584722/145552301-f1187101-52a0-45e3-b645-cad99679e12c.png)
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tech-Stack
+- NextJs
+- React
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### External libraries
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- React-toastify
+- Headless-UI
+- React-Icons
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Features and pages
+
+1. Homescreen with the GOT background video and menubar.
+2. Explore page with a responsive gallery of all the major houses. After expanding the house you can click on the house name to fetch data related to that particular house from the API and display in on a modal screen.
+3. Shop page with a tribute to the author in the 1st section and in the 2nd section a list of books fetched from the API and option to add them in your cart.
+4. Cart page, which is opened after clicking on the shopping cart icon on the shop page. Here there are options to increase and decrease the quantity, delete an item from cart and clear the cart. The product quantities and total value is also displayed on the right.
+
+## Note
+
+- All the pictures used in the site are static and exported from Figma file provided by Codedamn
+
+## Folder Structure
+
+
+- All the code is stored inside the `Component` folder.
+- Static files are stored in `public/assets`
+- All the navigable pages are in `src/pages`
+- Individual components are stored in `App/components`
