@@ -15,7 +15,7 @@ const workExperienceItems = [
     till: "Present",
     jobDescription:
       "This role would be great for a web developer with 3+ years' experience in designing and developing responsive websites. This position requires a profound understanding of the development process, using front-end technologies including HTML5, CSS3, JavaScript, jQuery, PHP/WordPress. ",
-    jobResponsibilities: "",
+    jobResponsibilities: "Create an appealing design and turn it into a WordPress plugin",
   },
   {
     id: 2,

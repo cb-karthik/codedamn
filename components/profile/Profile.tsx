@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BiEdit } from "react-icons/bi";
 import { CiLocationOn } from "react-icons/ci";
 import ProfileSkills from "./profilecard/ProfileSkills";
@@ -9,26 +9,33 @@ import ProfileSocialIcons from "./profilecard/ProfileSocialIcons";
 import { useGlobalData } from "@/context/DataContext";
 import ProfileOptions from "./ProfileOptions";
 import { useSession } from "next-auth/react";
+import WelcomeModal from "../WelcomeModel";
 
 function Profile() {
-  // const [data] = useGobalData();
+  const [isVisible, setIsVisible] = useState(() => {
+    const isCancelled = localStorage.getItem("isWelcomeCancelled");
+    if (isCancelled) return false;
+    return true;
+  });
+
   const { data, status } = useSession({ required: false });
   const imageSrc = data?.user?.image ?? "";
   const { data: globalData } = useGlobalData();
   const globalUserImage = globalData?.profile?.imgSrc;
   const name = globalData?.profile?.name || data?.user?.name || "John Doe";
-  const profession = globalData?.profile?.profession || "Full Stack";
-  const location = globalData?.profile?.location || "Mumbai, India";
+  const profession = globalData?.profile?.profession || "Frontend Developer";
+  const location = globalData?.profile?.location || "Bengaluru, India";
 
   return (
     <div className="overflow-hidden h-fit w-full max-w-[55rem] relative p-5 ">
       <div className="relative border-spacing-16 rounded-2xl ">
         <div className="w-full z-[-1] h-32 bg-gradient-to-r from-cyan-500  via-indigo-500 to-indigo-600 border rounded-t-lg sticky">
           <div className="absolute top-5 right-3 flex gap-1 ">
-            <div className=" flex text-white text-2xl items-center border bg-gray-200 bg-opacity-40 rounded-md p-1">
+            {/* <div className=" flex text-white text-2xl items-center border bg-gray-200 bg-opacity-40 rounded-md p-1">
               <BiEdit />
-              <button className="text-xs text-white">Edit cover</button>
-            </div>
+             <button className="text-xs text-white">Edit cover</button>
+           
+            </div> */}
           </div>
         </div>
 
@@ -66,6 +73,7 @@ function Profile() {
         </div>
       </div>
       <ProfileOptions />
+      <WelcomeModal isVisible={isVisible} setIsVisible={setIsVisible} />
     </div>
   );
 }

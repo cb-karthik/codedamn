@@ -133,7 +133,7 @@ function FormProfile() {
         <input
           type="text"
           name="profession"
-          placeholder="ex: Frontend Developer"
+          placeholder="ex:Frontend Developer"
           value={inputs.profession}
           onChange={handleChange}
           className="border  w-full rounded-lg p-2 bg-white-50"

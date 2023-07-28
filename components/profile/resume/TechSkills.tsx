@@ -9,13 +9,13 @@ const skillsItems = [
 
   "Javascript",
 
-  "React",
+  "ReactJs",
 
   "NextJs",
 
   "Mongodb",
 
-  "Node",
+  "NodeJs",
 
   "Python",
 
@@ -24,14 +24,17 @@ const skillsItems = [
 function TechSkills() {
   const { data: globalData } = useGlobalData();
 
-  const techSkillData = globalData?.resume?.techskills || skillsItems;
+  const techSkillData =
+    globalData?.resume?.techskills?.length > 0
+      ? globalData?.resume?.techskills
+      : skillsItems;
 
   return (
     <div className="mt-8 w-full">
       <div className=" text-xl font-bold mb-2">Tech skills</div>
 
       <div className="flex flex-wrap gap-5 pt-2 text-black">
-        {techSkillData.map((techSkillData,index) => (
+        {techSkillData.map((techSkillData, index) => (
           <TechSkillCard key={index} name={techSkillData} />
         ))}
       </div>
