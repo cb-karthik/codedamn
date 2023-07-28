@@ -11,6 +11,7 @@
 - This is an Assignment task given by the Codedamn organization.
 
 # Preview
+![0 Login Auth](https://github.com/cb-karthik/Co-Assignment/assets/115692390/01418fa4-d2f9-4e14-8b67-c86958bf2ea4)
 ![1 WelocmeNote](https://github.com/cb-karthik/Co-Assignment/assets/115692390/9630aba6-6c2b-4f80-8aba-6b1b41b98ea9)
 ![2 Editoptions](https://github.com/cb-karthik/Co-Assignment/assets/115692390/2129a935-4506-4145-a7e3-40fbf376e907)
 ![3](https://github.com/cb-karthik/Co-Assignment/assets/115692390/05196aa2-1283-4d96-9737-2163c25d63bb)
