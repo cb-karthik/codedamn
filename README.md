@@ -41,21 +41,21 @@
 ## Features and pages
 
 0. Please provide "GitHub" details for the login authentication and choose the cancel option to view the static data renderings.
-1. Home screen consists of all the major data renderings.
-2. Explore the edit page by clicking on the image icon on the header to navigate and edit the data(update)
-3. providing all the information is mandatory for a few sections for a better user experience.
-4. For any changes made in the edit section it is mandatory to save the changes by clicking the respective button
+1. The home screen consists of all the major data renderings.
+2. Explore the edit page by clicking on the image icon on the header to navigate and edit the data(update).
+3. Providing all the information is mandatory for a few sections for a better user experience.
+4. For any changes made in the edit section, it is mandatory to save the changes by clicking the respective button.
 
 ## Note
 
-- All the pictures used in the site are static and exported from Figma file provided by Codedamn
+- All the pictures used in the site are static and exported from the Figma file provided by Codedamn.
 
 ## Folder Structure
 
 
 - All the code is stored inside the `Component` folder.
-- 'edit' folder contains the files(codes) responsible for inputting/Updating/deleting the user data
-- 'profile' folder contains the files (codes) responsible for the designes we called them Cards.
+- `edits` folder contains the files(codes) responsible for inputting/Updating/deleting the user data
+- `profile` folder contains the files (codes) responsible for the designs; we called them Cards.
 - Static files are stored in `public/assets`
-- All the navigable pages are in `src/pages`
+- All the navigable pages are in `App/[...nextauth]/routes.ts`
 - Individual components are stored in `App`
