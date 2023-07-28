@@ -4,7 +4,7 @@
 
 # Live demo
 
-- Here is the live demo of the project hosted on Vercel. [ https://codedamn-igo3l649z-cb-karthik.vercel.app/ ]
+- Here is the live demo of the project hosted on Vercel. [ https://codedamn-fawn.vercel.app/ ]
 
 # About Project
 
