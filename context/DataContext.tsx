@@ -104,9 +104,12 @@ const DataContext = createContext<DataContextType>({} as DataContextType);
 
 function DataContextProvider({ children }: { children: React.ReactNode }) {
   const [data, setData] = useState<GlobalData>(() => {
-    const localData = localStorage.getItem("userData");
+    if (typeof localStorage !== "undefined") {
+      const localData = localStorage.getItem("userData");
 
-    if (localData) return JSON.parse(localData);
+      if (localData) return JSON.parse(localData);
+      return {};
+    }
     return {};
   });
 

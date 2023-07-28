@@ -13,13 +13,17 @@ function WelcomeModal({ isVisible, setIsVisible }: Props) {
   const router = useRouter();
 
   const handleEdit = () => {
-    localStorage.setItem("isWelcomeCancelled", "true");
-    router.push("/edit");
+    if (typeof localStorage !== "undefined") {
+      localStorage.setItem("isWelcomeCancelled", "true");
+      router.push("/edit");
+    }
   };
 
   const handleCancel = () => {
-    localStorage.setItem("isWelcomeCancelled", "true");
-    setIsVisible(false);
+    if (typeof localStorage !== "undefined") {
+      localStorage.setItem("isWelcomeCancelled", "true");
+      setIsVisible(false);
+    }
   };
 
   return (

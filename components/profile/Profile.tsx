@@ -13,9 +13,12 @@ import WelcomeModal from "../WelcomeModel";
 
 function Profile() {
   const [isVisible, setIsVisible] = useState(() => {
-    const isCancelled = localStorage.getItem("isWelcomeCancelled");
-    if (isCancelled) return false;
-    return true;
+    if (typeof localStorage !== "undefined") {
+      const isCancelled = localStorage.getItem("isWelcomeCancelled");
+      if (isCancelled) return false;
+      return true;
+    }
+    return false;
   });
 
   const { data, status } = useSession({ required: false });
